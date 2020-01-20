@@ -55,13 +55,13 @@ else
 		echo -e "\033[1m======== BUILD ENVIRONEMENT ========\033[0m\n"
 		vagrant up 
 		if [[ $? -ne 0 ]]; then
-			echo -e "\033[31m \nENVIRONMENT BUILD FAILED\033[0m"
+			echo -e "\033[31m \nENVIRONMENT BUILD FAILED\033[0m\n"
 			exit 1 
 		else	
-			echo -e "\033[37m \nENVIRONMENT BUILD SUCCESS\033[0m"
+			echo -e "\033[37m \nENVIRONMENT BUILD SUCCESS\033[0m\n"
 			test_env
-			echo -e "\033[1m======== CLEAN ENVIRONEMENT ========\033[0m\n"
-                        vagrant destroy
+			echo -e "\033[1m\n======== CLEAN ENVIRONEMENT ========\033[0m\n"
+                        vagrant destroy -f
 			exit 0
 		fi
 	else
